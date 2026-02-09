@@ -15,8 +15,16 @@ const uri = process.env.MONGO_URL;
 
 const app = express();
 
-app.use(cors());
-app.use(bodyParser.json());
+app.use(cors({
+  origin: [
+    "https://equitynest-frontend.onrender.com",
+    "https://equitynest-dashboard.onrender.com"
+  ]
+}));
+
+
+//app.use(cors());
+//app.use(bodyParser.json());
 
 // app.get("/addHoldings", async (req, res) => {
 //   let tempHoldings = [
